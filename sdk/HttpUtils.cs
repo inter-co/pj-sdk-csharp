@@ -33,10 +33,11 @@ namespace Sdk {
                     InterSdk.LogInfo("REQUEST {0}", body);
                 }
                 req.ContentType = "application/json";
-                req.ContentLength = body.Length;
-                StreamWriter streamWriter = new StreamWriter(req.GetRequestStream());
-                streamWriter.Write(body);
-                streamWriter.Close();
+                byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
+                req.ContentLength = bodyBytes.Length;
+                using (Stream stream = req.GetRequestStream()) {
+                    stream.Write(bodyBytes, 0, bodyBytes.Length);
+                }
             }
 
             string jsonResponse = "";
