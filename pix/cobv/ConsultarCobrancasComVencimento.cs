@@ -22,7 +22,7 @@ namespace Sdk.PixApi {
 		}
 
 		public PaginaCobrancasVencimento GetPage(Config config, string dataInicial, string dataFinal, int pagina, int tamanhoPagina, FiltroConsultarCobrancasComVencimento filtro) {
-			string url = Constants.URL_PIX_COBRANCA_COM_VENCIMENTO.Replace("AMBIENTE", config.Ambiente) + "?inicio=" + dataInicial + "&fim=" + dataFinal + "&paginacao.paginaAtual=" + pagina + SdkUtils.PrmTamanhoPagina(tamanhoPagina) + Addfilters(filtro);
+			string url = $"{Constants.URL_PIX_COBRANCA_COM_VENCIMENTO.Replace("AMBIENTE", config.Ambiente)}?inicio={dataInicial}&fim={dataFinal}&paginacao.paginaAtual={pagina}{(tamanhoPagina == 0 ? "" : "&paginacao.itensPorPagina=" + tamanhoPagina)}{Addfilters(filtro)}";
 			string json = HttpUtils.CallGet(config, url, Constants.ESCOPO_PIX_COBRANCA_VENCIMENTO_READ, "Erro ao consultar cobranças imediatas");
 			return (PaginaCobrancasVencimento) SdkUtils.Deserialize(typeof(PaginaCobrancasVencimento), json);
 		}
@@ -38,14 +38,13 @@ namespace Sdk.PixApi {
 			if (filtro.Cnpj != null ) {
 				filter.Append("&cnpj").Append("=").Append(filtro.Cnpj);
 			}
-			if (filtro.LocationPresente != null ) {
-				filter.Append("&locationPresente").Append("=").Append(filtro.LocationPresente);
+			if (filtro.LocationPresente.HasValue) {
+				filter.Append("&locationPresente").Append("=").Append(filtro.LocationPresente.Value.ToString().ToLowerInvariant());
 			}
 			if (filtro.Status != null ) {
 				filter.Append("&status").Append("=").Append(filtro.Status.ToString());
 			}
 			return filter.ToString();
 		}
-
 	}
 }
