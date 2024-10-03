@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj": {}
+  },
+  "projects": {
+    "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj",
+        "projectName": "inter-sdk-csharp",
+        "projectPath": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj",
+        "packagesPath": "/Users/fo356109/.nuget/packages/",
+        "outputPath": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fo356109/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

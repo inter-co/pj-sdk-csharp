@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = inter_sdk_csharp
+build_property.ProjectDir = /Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

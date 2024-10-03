@@ -1,0 +1,10 @@
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/bin/Debug/netstandard2.0/inter-sdk-csharp.deps.json
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/bin/Debug/netstandard2.0/inter-sdk-csharp.dll
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/bin/Debug/netstandard2.0/inter-sdk-csharp.pdb
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.csproj.AssemblyReference.cache
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.AssemblyInfoInputs.cache
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.AssemblyInfo.cs
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.csproj.CoreCompileInputs.cache
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.dll
+/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.pdb

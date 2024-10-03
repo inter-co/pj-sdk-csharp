@@ -1,0 +1,8 @@
+# Directories to ignore
+bin/
+obj/
+output/
+
+# Files to ignore
+*.dll
+*.pdb
