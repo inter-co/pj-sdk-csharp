@@ -1,7 +1,9 @@
 # Directories to ignore
-bin/
-obj/
-output/
+bin/**
+bin/Debug/netstandard2.0/**
+obj/**
+obj/Debug/netstandard2.0/**
+output/**
 
 # Files to ignore
 *.dll
