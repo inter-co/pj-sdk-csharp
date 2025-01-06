@@ -8,3 +8,8 @@
 /Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.csproj.CoreCompileInputs.cache
 /Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.dll
 /Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.pdb
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.csproj.AssemblyReference.cache
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.AssemblyInfoInputs.cache
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.AssemblyInfo.cs
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/obj/Debug/netstandard2.0/inter-sdk-csharp.csproj.CoreCompileInputs.cache

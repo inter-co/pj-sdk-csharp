@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj": {}
+    "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-csharp.csproj": {}
   },
   "projects": {
-    "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj": {
+    "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj",
+        "projectUniqueName": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-csharp.csproj",
         "projectName": "inter-sdk-csharp",
-        "projectPath": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj",
-        "packagesPath": "/Users/fo356109/.nuget/packages/",
-        "outputPath": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/obj/",
+        "projectPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-csharp.csproj",
+        "packagesPath": "/Users/bi008668/.nuget/packages/",
+        "outputPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fo356109/.nuget/NuGet/NuGet.Config"
+          "/Users/bi008668/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -61,7 +61,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }

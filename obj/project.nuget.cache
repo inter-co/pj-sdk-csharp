@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KcfnUmBwvsQ=",
+  "dgSpecHash": "nO3NqRXuaq4=",
   "success": true,
-  "projectFilePath": "/Users/fo356109/Documents/Workspaces/Inter/SDKs-IA/inter-sdk-csharp/inter-sdk-csharp.csproj",
+  "projectFilePath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-csharp.csproj",
   "expectedPackageFiles": [
-    "/Users/fo356109/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/Users/fo356109/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+    "/Users/bi008668/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/bi008668/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
