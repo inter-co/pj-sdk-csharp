@@ -51,7 +51,7 @@ public class BillingCollectionRetrievingResponse : AbstractModel
     public string CancellationReason { get; set; }
     /// <summary> Indicates whether the billing statement has been archived. </summary>
     [JsonPropertyName("arquivada")]
-    public bool? Archived { get; set; } // Nullable to match Boolean in Java
+    public bool? Archived { get; set; }
     /// <summary> A list of applicable discounts on the billing statement. </summary>
     [JsonPropertyName("descontos")]
     public List<Discount> Discounts { get; set; }

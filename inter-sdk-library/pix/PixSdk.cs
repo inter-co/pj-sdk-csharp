@@ -29,7 +29,7 @@ public class PixSdk
             dueBillingClient = new DueBillingClient();
         }
 
-        return dueBillingClient.Include(config, txid, billing);
+        return dueBillingClient.IncludeDueBilling(config, txid, billing);
     }
 
     /// <summary>
@@ -45,7 +45,7 @@ public class PixSdk
             dueBillingClient = new DueBillingClient();
         }
 
-        return dueBillingClient.Retrieve(config, txid);
+        return dueBillingClient.RetrieveDueBilling(config, txid);
     }
 
     /// <summary>
@@ -56,14 +56,14 @@ public class PixSdk
     /// <param _name_="_filter_"> Optional filter criteria to refine the billing collection retrieval. </param>
     /// <returns> A list of DetailedDuePixBilling objects containing the retrieved billing information. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<DetailedDuePixBilling> RetrieveBillingCollection(string initialDate, string finalDate, RetrieveDueBillingFilter filter)
+    public List<DetailedDuePixBilling> RetrieveBillingCollectionInRange(string initialDate, string finalDate, RetrieveDueBillingFilter filter)
     {
         if (dueBillingClient == null)
         {
             dueBillingClient = new DueBillingClient();
         }
 
-        return dueBillingClient.Retrieve(config, initialDate, finalDate, filter);
+        return dueBillingClient.RetrieveDueBillingInRange(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -76,14 +76,14 @@ public class PixSdk
     /// <param _name_="_filter_"> Optional filter criteria to refine the billing collection retrieval. </param>
     /// <returns> A DueBillingPage object containing the paginated list of retrieved due billing entries. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public DueBillingPage RetrieveBillingCollection(string initialDate, string finalDate, int page, int? pageSize, RetrieveDueBillingFilter filter)
+    public DueBillingPage RetrieveDueBillingCollectionPage(string initialDate, string finalDate, int page, int? pageSize, RetrieveDueBillingFilter filter)
     {
         if (dueBillingClient == null)
         {
             dueBillingClient = new DueBillingClient();
         }
 
-        return dueBillingClient.Retrieve(config, initialDate, finalDate, page, pageSize, filter);
+        return dueBillingClient.RetrieveDueBillingPage(config, initialDate, finalDate, page, pageSize, filter);
     }
 
     /// <summary>
@@ -100,7 +100,7 @@ public class PixSdk
             dueBillingClient = new DueBillingClient();
         }
 
-        return dueBillingClient.Review(config, txid, billing);
+        return dueBillingClient.ReviewDueBilling(config, txid, billing);
     }
 
     /// <summary>
@@ -116,7 +116,7 @@ public class PixSdk
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        dueBillingBatchClient.Include(config, txid, batchRequest);
+        dueBillingBatchClient.IncludeDueBillingBatch(config, txid, batchRequest);
     }
 
     /// <summary>
@@ -132,7 +132,7 @@ public class PixSdk
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        return dueBillingBatchClient.Retrieve(config, id);
+        return dueBillingBatchClient.RetrieveDueBillingBatch(config, id);
     }
 
     /// <summary>
@@ -144,14 +144,14 @@ public class PixSdk
     /// <param _name_="_pageSize_"> The number of items per page. If null, a default size will be used. </param>
     /// <returns> A DueBillingBatchPage object containing the paginated list of retrieved due billing batches. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public DueBillingBatchPage RetrieveDueBillingBatchCollection(string initialDate, string finalDate, int page, int? pageSize)
+    public DueBillingBatchPage RetrieveDueBillingBatchCollectionPage(string initialDate, string finalDate, int page, int? pageSize)
     {
         if (dueBillingBatchClient == null)
         {
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        return dueBillingBatchClient.Retrieve(config, initialDate, finalDate, page, pageSize);
+        return dueBillingBatchClient.RetrieveDueBillingBatchesPage(config, initialDate, finalDate, page, pageSize);
     }
 
     /// <summary>
@@ -161,14 +161,14 @@ public class PixSdk
     /// <param _name_="_finalDate_"> The ending date for the billing batch collection retrieval. Format: YYYY-MM-DD. </param>
     /// <returns> A list of DueBillingBatch objects containing the retrieved billing batches. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<DueBillingBatch> RetrieveDueBillingBatchCollection(string initialDate, string finalDate)
+    public List<DueBillingBatch> RetrieveDueBillingBatchCollectionInRange(string initialDate, string finalDate)
     {
         if (dueBillingBatchClient == null)
         {
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        return dueBillingBatchClient.Retrieve(config, initialDate, finalDate);
+        return dueBillingBatchClient.RetrieveDueBillingBatchesInRange(config, initialDate, finalDate);
     }
 
     /// <summary>
@@ -185,7 +185,7 @@ public class PixSdk
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        return dueBillingBatchClient.RetrieveBySituation(config, id, situation);
+        return dueBillingBatchClient.RetrieveDueBillingBatchBySituation(config, id, situation);
     }
 
     /// <summary>
@@ -201,7 +201,7 @@ public class PixSdk
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        return dueBillingBatchClient.RetrieveSummary(config, id);
+        return dueBillingBatchClient.RetrieveDueBillingBatchSummary(config, id);
     }
 
     /// <summary>
@@ -217,7 +217,7 @@ public class PixSdk
             dueBillingBatchClient = new DueBillingBatchClient();
         }
 
-        dueBillingBatchClient.Review(config, id, request);
+        dueBillingBatchClient.ReviewDueBillingBatch(config, id, request);
     }
 
     /// <summary>
@@ -232,7 +232,7 @@ public class PixSdk
         {
             immediateBillingClient = new ImmediateBillingClient();
         }
-        return immediateBillingClient.Include(config, billing);
+        return immediateBillingClient.IncludeImmediateBilling(config, billing);
     }
 
     /// <summary>
@@ -247,7 +247,7 @@ public class PixSdk
         {
             immediateBillingClient = new ImmediateBillingClient();
         }
-        return immediateBillingClient.Retrieve(config, txid);
+        return immediateBillingClient.RetrieveImmediateBilling(config, txid);
     }
 
     /// <summary>
@@ -258,13 +258,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the immediate billings. </param>
     /// <returns> A list of DetailedImmediatePixBilling objects containing the details of the retrieved immediate billings. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<DetailedImmediatePixBilling> RetrieveImmediateBillingList(string initialDate, string finalDate, RetrieveImmediateBillingsFilter filter)
+    public List<DetailedImmediatePixBilling> RetrieveImmediateBillingCollectionInRange(string initialDate, string finalDate, RetrieveImmediateBillingsFilter filter)
     {
         if (immediateBillingClient == null)
         {
             immediateBillingClient = new ImmediateBillingClient();
         }
-        return immediateBillingClient.Retrieve(config, initialDate, finalDate, filter);
+        return immediateBillingClient.RetrieveImmediateBillingInRange(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -277,13 +277,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the immediate billings. </param>
     /// <returns> A BillingPage object containing the paginated list of retrieved immediate billings. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public PixBillingPage RetrieveImmediateBillingList(string initialDate, string finalDate, int page, int? pageSize, RetrieveImmediateBillingsFilter filter)
+    public PixBillingPage RetrieveImmediateBillingCollectionPage(string initialDate, string finalDate, int page, int? pageSize, RetrieveImmediateBillingsFilter filter)
     {
         if (immediateBillingClient == null)
         {
             immediateBillingClient = new ImmediateBillingClient();
         }
-        return immediateBillingClient.Retrieve(config, initialDate, finalDate, page, pageSize, filter);
+        return immediateBillingClient.RetrieveImmediateBillingPage(config, initialDate, finalDate, page, pageSize, filter);
     }
 
     /// <summary>
@@ -298,7 +298,7 @@ public class PixSdk
         {
             immediateBillingClient = new ImmediateBillingClient();
         }
-        return immediateBillingClient.Review(config, billing);
+        return immediateBillingClient.ReviewImmediateBilling(config, billing);
     }
 
     /// <summary>
@@ -313,7 +313,7 @@ public class PixSdk
         {
             locationClient = new LocationClient();
         }
-        return locationClient.Include(config, immediateBillingType);
+        return locationClient.IncludeLocation(config, immediateBillingType);
     }
 
     /// <summary>
@@ -328,7 +328,7 @@ public class PixSdk
         {
             locationClient = new LocationClient();
         }
-        return locationClient.Retrieve(config, locationId);
+        return locationClient.RetrieveLocation(config, locationId);
     }
 
     /// <summary>
@@ -339,13 +339,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the locations. </param>
     /// <returns> A list of Location objects containing the details of the retrieved locations. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<Location> RetrieveLocationsList(string initialDate, string finalDate, RetrieveLocationFilter filter)
+    public List<Location> RetrieveLocationsListInRange(string initialDate, string finalDate, RetrieveLocationFilter filter)
     {
         if (locationClient == null)
         {
             locationClient = new LocationClient();
         }
-        return locationClient.Retrieve(config, initialDate, finalDate, filter);
+        return locationClient.RetrieveLocationInRange(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -358,13 +358,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the locations. </param>
     /// <returns> A LocationPage object containing the paginated list of retrieved locations. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public LocationPage RetrieveLocationsList(string initialDate, string finalDate, int page, int? pageSize, RetrieveLocationFilter filter)
+    public LocationPage RetrieveLocationsListPage(string initialDate, string finalDate, int page, int? pageSize, RetrieveLocationFilter filter)
     {
         if (locationClient == null)
         {
             locationClient = new LocationClient();
         }
-        return locationClient.Retrieve(config, initialDate, finalDate, page, pageSize, filter);
+        return locationClient.RetrieveLocationPage(config, initialDate, finalDate, page, pageSize, filter);
     }
 
     /// <summary>
@@ -379,7 +379,7 @@ public class PixSdk
         {
             locationClient = new LocationClient();
         }
-        return locationClient.Unlink(config, id);
+        return locationClient.UnlinkLocation(config, id);
     }
 
     /// <summary>
@@ -396,7 +396,7 @@ public class PixSdk
         {
             pixClient = new PixClient();
         }
-        return pixClient.Request(config, e2eId, id, devolutionRequestBody);
+        return pixClient.RequestDevolution(config, e2eId, id, devolutionRequestBody);
     }
 
     /// <summary>
@@ -412,7 +412,7 @@ public class PixSdk
         {
             pixClient = new PixClient();
         }
-        return pixClient.Retrieve(config, e2eId, id);
+        return pixClient.RetrieveDevolution(config, e2eId, id);
     }
 
     /// <summary>
@@ -423,13 +423,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the PIX transactions. </param>
     /// <returns> A list of Pix objects containing the details of the retrieved PIX transactions. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<Pix> RetrievePixList(string initialDate, string finalDate, RetrievedPixFilter filter)
+    public List<Pix> RetrievePixListInRange(string initialDate, string finalDate, RetrievedPixFilter filter)
     {
         if (pixClient == null)
         {
             pixClient = new PixClient();
         }
-        return pixClient.Retrieve(config, initialDate, finalDate, filter);
+        return pixClient.RetrievePixInRange(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -442,13 +442,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the PIX transactions. </param>
     /// <returns> A PixPage object containing the paginated list of retrieved PIX transactions. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public PixPage RetrievePixList(string initialDate, string finalDate, int page, int? pageSize, RetrievedPixFilter filter)
+    public PixPage RetrievePixListPage(string initialDate, string finalDate, int page, int? pageSize, RetrievedPixFilter filter)
     {
         if (pixClient == null)
         {
             pixClient = new PixClient();
         }
-        return pixClient.Retrieve(config, initialDate, finalDate, page, pageSize, filter);
+        return pixClient.RetrievePixPage(config, initialDate, finalDate, page, pageSize, filter);
     }
 
     /// <summary>
@@ -463,7 +463,7 @@ public class PixSdk
         {
             pixClient = new PixClient();
         }
-        return pixClient.Retrieve(config, e2eId);
+        return pixClient.RetrievePix(config, e2eId);
     }
 
     /// <summary>
@@ -474,13 +474,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the callback responses. </param>
     /// <returns> A list of RetrieveCallbackResponse objects containing the details of the retrieved callbacks. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<RetrieveCallbackResponse> RetrieveCallbacks(string initialDateHour, string finalDateHour, PixCallbackRetrieveFilter filter)
+    public List<RetrieveCallbackResponse> RetrieveCallbacksInRange(string initialDateHour, string finalDateHour, PixCallbackRetrieveFilter filter)
     {
         if (pixWebhookSdk == null)
         {
             pixWebhookSdk = new PixWebhookSdk();
         }
-        return pixWebhookSdk.Retrieve(config, initialDateHour, finalDateHour, filter);
+        return pixWebhookSdk.RetrieveCallbackInRange(config, initialDateHour, finalDateHour, filter);
     }
 
     /// <summary>
@@ -493,13 +493,13 @@ public class PixSdk
     /// <param _name_="_filter_"> The filter criteria for retrieving the callback responses. </param>
     /// <returns> A CallbackPage object containing the paginated list of retrieved callbacks. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public PixCallbackPage RetrieveCallbacks(string initialDateHour, string finalDateHour, int page, int? pageSize, PixCallbackRetrieveFilter filter)
+    public PixCallbackPage RetrieveCallbacksPage(string initialDateHour, string finalDateHour, int page, int? pageSize, PixCallbackRetrieveFilter filter)
     {
         if (pixWebhookSdk == null)
         {
             pixWebhookSdk = new PixWebhookSdk();
         }
-        return pixWebhookSdk.Retrieve(config, initialDateHour, finalDateHour, page, pageSize, filter);
+        return pixWebhookSdk.RetrieveCallbackPage(config, initialDateHour, finalDateHour, page, pageSize, filter);
     }
 
     /// <summary>
@@ -514,7 +514,7 @@ public class PixSdk
         {
             pixWebhookSdk = new PixWebhookSdk();
         }
-        pixWebhookSdk.Include(config, key, webhookUrl);
+        pixWebhookSdk.IncludeWebhook(config, key, webhookUrl);
     }
 
     /// <summary>
@@ -529,7 +529,7 @@ public class PixSdk
         {
             pixWebhookSdk = new PixWebhookSdk();
         }
-        return pixWebhookSdk.Retrieve(config, key);
+        return pixWebhookSdk.RetrieveWebhook(config, key);
     }
 
     /// <summary>
@@ -543,6 +543,6 @@ public class PixSdk
         {
             pixWebhookSdk = new PixWebhookSdk();
         }
-        pixWebhookSdk.Delete(config, key);
+        pixWebhookSdk.DeleteWebhook(config, key);
     }
 }

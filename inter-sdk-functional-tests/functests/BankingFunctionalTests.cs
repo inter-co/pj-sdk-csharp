@@ -44,7 +44,7 @@ public class BankingFunctionalTests
             OperationType = OperationType.C
         };
 
-        List<EnrichedTransaction> enrichedTransactions = bankingSdk.RetrieveEnrichedStatement(initialDate, finalDate, filter);
+        List<EnrichedTransaction> enrichedTransactions = bankingSdk.RetrieveEnrichedStatementInRange(initialDate, finalDate, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(enrichedTransactions, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -60,7 +60,7 @@ public class BankingFunctionalTests
         };
         int page = 0;
 
-        EnrichedBankStatementPage enrichedTransactions = bankingSdk.RetrieveEnrichedStatement(initialDate, finalDate, filter, page);
+        EnrichedBankStatementPage enrichedTransactions = bankingSdk.RetrieveEnrichedStatementPage(initialDate, finalDate, filter, page);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(enrichedTransactions, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -116,7 +116,7 @@ public class BankingFunctionalTests
             FilterDateBy = PaymentDateType.PAGAMENTO
         };
 
-        List<Payment> payments = bankingSdk.RetrievePayment(initialDate, finalDate, filter);
+        List<Payment> payments = bankingSdk.RetrievePaymentsInRange(initialDate, finalDate, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(payments, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -162,7 +162,7 @@ public class BankingFunctionalTests
             FilterDateBy = DarfPaymentDateType.PAGAMENTO
         };
 
-        List<DarfPaymentResponse> retrieveDarfPayments = bankingSdk.RetrieveDarfPayments(initialDate, finalDate, filter);
+        List<DarfPaymentResponse> retrieveDarfPayments = bankingSdk.RetrieveDarfPaymentsInRange(initialDate, finalDate, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(retrieveDarfPayments, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -302,7 +302,7 @@ public class BankingFunctionalTests
         string finalDateHour = FuncTestUtils.GetString("finalDateHour(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         CallbackRetrieveFilter filter = new CallbackRetrieveFilter();
 
-        List<RetrieveCallbackResponse> callbacks = bankingSdk.RetrieveCallback(webhookType, initialDateHour, finalDateHour, filter);
+        List<RetrieveCallbackResponse> callbacks = bankingSdk.RetrieveCallbackInRange(webhookType, initialDateHour, finalDateHour, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(callbacks, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -317,7 +317,7 @@ public class BankingFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        CallbackPage callbacks = bankingSdk.RetrieveCallback(webhookType, initialDateHour, finalDateHour, filter, page, pageSize);
+        CallbackPage callbacks = bankingSdk.RetrieveCallbacksPage(webhookType, initialDateHour, finalDateHour, filter, page, pageSize);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(callbacks, Newtonsoft.Json.Formatting.Indented));
     }
 }

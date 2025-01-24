@@ -13,7 +13,7 @@ public class BankStatementClient
     /// <returns> A <see cref="BankStatement"/> object containing the statement details. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval of the statement or if an error
     /// occurs during the JSON parsing. </exception>
-    public BankStatement Retrieve(Config config, string initialDate, string finalDate)
+    public BankStatement RetrieveStatement(Config config, string initialDate, string finalDate)
     {
         InterSdk.LogInfo($"RetrieveBankStatement {config.ClientId} {initialDate}-{finalDate}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_STATEMENT) + "?dataInicio=" + initialDate + "&dataFim=" + finalDate;
@@ -37,7 +37,7 @@ public class BankStatementClient
     /// <param name="file"> The path where the PDF file will be saved. </param>
     /// <exception cref="SdkException"> If an error occurs during the retrieval of the statement or if an error
     /// occurs during the PDF decoding or file writing process. </exception>
-    public void Retrieve(Config config, string initialDate, string finalDate, string file)
+    public void RetrieveStatementInPdf(Config config, string initialDate, string finalDate, string file)
     {
         InterSdk.LogInfo($"RetrieveBankStatementInPdf {config.ClientId} {initialDate}-{finalDate}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_STATEMENT_PDF) + "?dataInicio=" + initialDate + "&dataFim=" + finalDate;
@@ -68,7 +68,7 @@ public class BankStatementClient
     /// <param name="filter"> Optional filters for retrieving enriched bank statements. </param>
     /// <returns> An <see cref="EnrichedBankStatementPage"/> containing the requested page of enriched statements. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public EnrichedBankStatementPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize, FilterRetrieveEnrichedStatement filter)
+    public EnrichedBankStatementPage RetrieveEnrichedStatementPage(Config config, string initialDate, string finalDate, int page, int? pageSize, FilterRetrieveEnrichedStatement filter)
     {
         InterSdk.LogInfo($"RetrieveEnrichedBankStatement {config.ClientId} {initialDate} - {finalDate}");
         return GetPage(config, initialDate, finalDate, page, pageSize, filter);
@@ -82,7 +82,7 @@ public class BankStatementClient
     /// <param name="filter"> Optional filters for retrieving enriched bank statements. </param>
     /// <returns> A list of <see cref="EnrichedTransaction"/> representing all transactions within the date range. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public List<EnrichedTransaction> Retrieve(Config config, string initialDate, string finalDate, FilterRetrieveEnrichedStatement filter)
+    public List<EnrichedTransaction> RetrieveStatementInRange(Config config, string initialDate, string finalDate, FilterRetrieveEnrichedStatement filter)
     {
         InterSdk.LogInfo($"RetrieveEnrichedBankStatement {config.ClientId} {initialDate} - {finalDate}");
         int page = 0;

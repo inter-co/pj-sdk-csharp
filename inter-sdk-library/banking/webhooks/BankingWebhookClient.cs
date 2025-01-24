@@ -13,7 +13,7 @@ public class BankingWebhookClient
     /// <param _name_="_webhookType_"> The type of the webhook to be deleted. </param>
     /// <exception cref="SdkException"> If there is an error during the deletion process, such as
     ///                      network issues or API response errors. </exception>
-    public void Delete(Config config, string webhookType)
+    public void DeleteWebhook(Config config, string webhookType)
     {
         InterSdk.LogInfo($"DeleteWebhook banking {config.ClientId} {webhookType}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_WEBHOOK) + "/" + webhookType;
@@ -28,7 +28,7 @@ public class BankingWebhookClient
     /// <param _name_="_webhookUrl_"> The URL where the webhook will send notifications. </param>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as
     ///                      network issues or API response errors. </exception>
-    public void Include(Config config, string webhookType, string webhookUrl)
+    public void IncludeWebhook(Config config, string webhookType, string webhookUrl)
     {
         InterSdk.LogInfo($"IncludeWebhookBanking {config.ClientId} {webhookType} {webhookUrl}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_WEBHOOK) + "/" + webhookType;
@@ -50,7 +50,7 @@ public class BankingWebhookClient
     /// <returns> A {@link CallbackPage} object containing the requested page of callback responses. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public CallbackPage Retrieve(Config config, string webhookType, string initialDateHour, string finalDateHour, int page, int? pageSize, CallbackRetrieveFilter filter)
+    public CallbackPage RetrieveCallbackPage(Config config, string webhookType, string initialDateHour, string finalDateHour, int page, int? pageSize, CallbackRetrieveFilter filter)
     {
         InterSdk.LogInfo($"RetrieveCallbacks {config.ClientId} {initialDateHour}-{finalDateHour}");
         return GetPage(config, webhookType, initialDateHour, finalDateHour, page, pageSize, filter);
@@ -68,7 +68,7 @@ public class BankingWebhookClient
     ///         within the specified date range. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<RetrieveCallbackResponse> Retrieve(Config config, string webhookType, string initialDate, string finalDate, CallbackRetrieveFilter filter)
+    public List<RetrieveCallbackResponse> RetrieveCallbacksInRange(Config config, string webhookType, string initialDate, string finalDate, CallbackRetrieveFilter filter)
     {
         InterSdk.LogInfo($"RetrieveCallbacks {config.ClientId} {initialDate}-{finalDate}");
         int page = 0;
@@ -93,7 +93,7 @@ public class BankingWebhookClient
     /// <returns> A {@link Webhook} object containing the configuration details of the requested webhook. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as
     ///                      network issues or API response errors. </exception>
-    public Webhook Retrieve(Config config, string webhookType)
+    public Webhook RetrieveWebhook(Config config, string webhookType)
     {
         InterSdk.LogInfo($"RetrieveWebhook banking {config.ClientId} {webhookType}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_WEBHOOK) + "/" + webhookType;

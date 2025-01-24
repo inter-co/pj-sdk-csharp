@@ -18,7 +18,7 @@ public class BankingPixClient
     /// after including the PIX payment request. </returns>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as
     ///                      network issues or API response errors. </exception>
-    public IncludePixResponse Include(Config config, BankingPix pix)
+    public IncludePixResponse IncludePixPayment(Config config, BankingPix pix)
     {
         InterSdk.LogInfo($"IncludePix {config.ClientId} {pix.Description}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT_PIX);
@@ -45,7 +45,7 @@ public class BankingPixClient
     /// requested PIX payment. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as
     ///                      network issues or API response errors. </exception>
-    public RetrievePixResponse Retrieve(Config config, string requestCode)
+    public RetrievePixResponse RetrievePixPayment(Config config, string requestCode)
     {
         InterSdk.LogInfo($"RetrievePix {config.ClientId} {requestCode}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT_PIX) + "/" + requestCode;

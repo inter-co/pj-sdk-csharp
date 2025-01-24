@@ -12,7 +12,7 @@ public class BillingWebhookClient
     /// <param _name_="_config_"> The configuration object containing client information. </param>
     /// <exception cref="SdkException"> If there is an error during the deletion process, such as network issues
     ///                      or API response errors. </exception>
-    public void Delete(Config config)
+    public void DeleteWebhook(Config config)
     {
         InterSdk.LogInfo($"DeleteWebhook billing {config.ClientId}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING_WEBHOOK);
@@ -26,7 +26,7 @@ public class BillingWebhookClient
     /// <param _name_="_webhookUrl_"> The URL to be included as a webhook for billing notifications. </param>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as network issues
     ///                      or API response errors. </exception>
-    public void Include(Config config, string webhookUrl)
+    public void IncludeWebhook(Config config, string webhookUrl)
     {
         InterSdk.LogInfo($"IncludeWebhook billing {config.ClientId} {webhookUrl}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING_WEBHOOK);
@@ -47,7 +47,7 @@ public class BillingWebhookClient
     /// <returns> A {@link BillingCallbackPage} object containing the requested page of callback responses. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public BillingCallbackPage Retrieve(Config config, string initialDateHour, string finalDateHour, int page, int? pageSize, BillingRetrieveCallbacksFilter filter)
+    public BillingCallbackPage RetrieveCallbackPage(Config config, string initialDateHour, string finalDateHour, int page, int? pageSize, BillingRetrieveCallbacksFilter filter)
     {
         InterSdk.LogInfo($"RetrieveCallback {config.ClientId} {initialDateHour}-{finalDateHour}");
         return GetPage(config, initialDateHour, finalDateHour, page, pageSize, filter);
@@ -64,7 +64,7 @@ public class BillingWebhookClient
     /// within the specified date range. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<BillingRetrieveCallbackResponse> Retrieve(Config config, string initialDateHour, string finalDateHour, BillingRetrieveCallbacksFilter filter)
+    public List<BillingRetrieveCallbackResponse> RetrieveCallbackInRange(Config config, string initialDateHour, string finalDateHour, BillingRetrieveCallbacksFilter filter)
     {
         InterSdk.LogInfo($"RetrieveCallback {config.ClientId} {initialDateHour}-{finalDateHour}");
         int page = 0;
@@ -88,7 +88,7 @@ public class BillingWebhookClient
     /// <returns> A {@link Webhook} object containing the current webhook settings. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public Webhook Retrieve(Config config)
+    public Webhook RetrieveWebhook(Config config)
     {
         InterSdk.LogInfo($"RetrieveWebhook billing {config.ClientId}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING_WEBHOOK);

@@ -23,7 +23,7 @@ public class BillingSdk
             billingClient = new BillingClient();
         }
 
-        billingClient.Cancel(config, requestCode, cancellationReason);
+        billingClient.CancelBilling(config, requestCode, cancellationReason);
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public class BillingSdk
             billingClient = new BillingClient();
         }
 
-        return billingClient.Issue(config, billingIssueRequest);
+        return billingClient.IssueBilling(config, billingIssueRequest);
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class BillingSdk
             billingClient = new BillingClient();
         }
 
-        return billingClient.Retrieve(config, requestCode);
+        return billingClient.RetrieveBilling(config, requestCode);
     }
 
     /// <summary>
@@ -67,14 +67,14 @@ public class BillingSdk
     /// <param _name_="_sort_"> Optional sorting parameters for the retrieved collection. </param>
     /// <returns> A list of retrieved billing information objects. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<RetrievedBillingCollectionUnit> RetrieveBillingCollection(string initialDate, string finalDate, BillingRetrievalFilter filter, Sorting sort)
+    public List<RetrievedBillingCollectionUnit> RetrieveBillingCollectionInRange(string initialDate, string finalDate, BillingRetrievalFilter filter, Sorting sort)
     {
         if (billingClient == null)
         {
             billingClient = new BillingClient();
         }
 
-        return billingClient.Retrieve(config, initialDate, finalDate, filter, sort);
+        return billingClient.RetrieveBillingInRange(config, initialDate, finalDate, filter, sort);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public class BillingSdk
     /// <param _name_="_sort_"> Optional sorting parameters for the retrieved collection. </param>
     /// <returns> A BillingPage object containing the retrieved billing information. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public BillingPage RetrieveBillingCollection(string initialDate, string finalDate, int page, int? pageSize, BillingRetrievalFilter filter, Sorting sort)
+    public BillingPage RetrieveBillingCollectionPage(string initialDate, string finalDate, int page, int? pageSize, BillingRetrievalFilter filter, Sorting sort)
     {
         if (billingClient == null)
         {
             billingClient = new BillingClient();
         }
 
-        return billingClient.Retrieve(config, initialDate, finalDate, page, pageSize, filter, sort);
+        return billingClient.RetrieveBillingPage(config, initialDate, finalDate, page, pageSize, filter, sort);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public class BillingSdk
             billingClient = new BillingClient();
         }
 
-        billingClient.Retrieve(config, requestCode, file);
+        billingClient.RetrieveBillingInPdf(config, requestCode, file);
     }
 
     /// <summary>
@@ -129,7 +129,7 @@ public class BillingSdk
             billingClient = new BillingClient();
         }
 
-        return billingClient.Retrieve(config, initialDate, finalDate, filter);
+        return billingClient.RetrieveBillingSummary(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -140,14 +140,14 @@ public class BillingSdk
     /// <param _name_="_filter_"> Optional filter criteria to refine the callback retrieval. </param>
     /// <returns> A list of BillingRetrieveCallbackResponse objects containing the retrieved callback information. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public List<BillingRetrieveCallbackResponse> RetrieveCallbacks(string initialDateHour, string finalDateHour, BillingRetrieveCallbacksFilter filter)
+    public List<BillingRetrieveCallbackResponse> RetrieveCallbacksInRange(string initialDateHour, string finalDateHour, BillingRetrieveCallbacksFilter filter)
     {
         if (billingWebhookClient == null)
         {
             billingWebhookClient = new BillingWebhookClient();
         }
 
-        return billingWebhookClient.Retrieve(config, initialDateHour, finalDateHour, filter);
+        return billingWebhookClient.RetrieveCallbackInRange(config, initialDateHour, finalDateHour, filter);
     }
 
     /// <summary>
@@ -160,14 +160,14 @@ public class BillingSdk
     /// <param _name_="_filter_"> Optional filter criteria to refine the callback retrieval. </param>
     /// <returns> A CallbackPage object containing the paginated list of retrieved callbacks. </returns>
     /// <exception cref="SdkException"> If an error occurs during the retrieval process. </exception>
-    public BillingCallbackPage RetrieveCallbacks(string initialDateHour, string finalDateHour, int page, int? pageSize, BillingRetrieveCallbacksFilter filter)
+    public BillingCallbackPage RetrieveCallbacksPage(string initialDateHour, string finalDateHour, int page, int? pageSize, BillingRetrieveCallbacksFilter filter)
     {
         if (billingWebhookClient == null)
         {
             billingWebhookClient = new BillingWebhookClient();
         }
 
-        return billingWebhookClient.Retrieve(config, initialDateHour, finalDateHour, page, pageSize, filter);
+        return billingWebhookClient.RetrieveCallbackPage(config, initialDateHour, finalDateHour, page, pageSize, filter);
     }
 
     /// <summary>
@@ -182,7 +182,7 @@ public class BillingSdk
             billingWebhookClient = new BillingWebhookClient();
         }
 
-        billingWebhookClient.Include(config, url);
+        billingWebhookClient.IncludeWebhook(config, url);
     }
 
     /// <summary>
@@ -197,7 +197,7 @@ public class BillingSdk
             billingWebhookClient = new BillingWebhookClient();
         }
 
-        return billingWebhookClient.Retrieve(config);
+        return billingWebhookClient.RetrieveWebhook(config);
     }
 
     /// <summary>
@@ -211,6 +211,6 @@ public class BillingSdk
             billingWebhookClient = new BillingWebhookClient();
         }
 
-        billingWebhookClient.Delete(config);
+        billingWebhookClient.DeleteWebhook(config);
     }
 }

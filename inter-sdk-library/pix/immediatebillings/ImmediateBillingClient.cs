@@ -19,7 +19,7 @@ public class ImmediateBillingClient
     /// <returns> A {@link GeneratedImmediateBilling} object containing the details of the generated immediate billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as network issues
     ///                      or API response errors. </exception>
-    public GeneratedImmediateBilling Include(Config config, PixBilling billing)
+    public GeneratedImmediateBilling IncludeImmediateBilling(Config config, PixBilling billing)
     {
         InterSdk.LogInfo($"IncludeImmediateBilling {config.ClientId} {billing.Txid}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_IMMEDIATE_BILLINGS);
@@ -55,7 +55,7 @@ public class ImmediateBillingClient
     /// <returns> A {@link DetailedImmediatePixBilling} object containing the details of the retrieved immediate billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DetailedImmediatePixBilling Retrieve(Config config, string txId)
+    public DetailedImmediatePixBilling RetrieveImmediateBilling(Config config, string txId)
     {
         InterSdk.LogInfo($"RetrieveImmediateBilling {config.ClientId} txId={txId}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_IMMEDIATE_BILLINGS) + "/" + txId;
@@ -84,7 +84,7 @@ public class ImmediateBillingClient
     /// <returns> A {@link BillingPage} object containing the requested page of immediate billings. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public PixBillingPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrieveImmediateBillingsFilter filter)
+    public PixBillingPage RetrieveImmediateBillingPage(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrieveImmediateBillingsFilter filter)
     {
         InterSdk.LogInfo($"RetrieveImmediateBillingList {config.ClientId} {initialDate}-{finalDate} page={page}");
         return GetPage(config, initialDate, finalDate, page, pageSize, filter);
@@ -100,7 +100,7 @@ public class ImmediateBillingClient
     /// <returns> A list of {@link DetailedImmediatePixBilling} objects containing all retrieved immediate billings. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<DetailedImmediatePixBilling> Retrieve(Config config, string initialDate, string finalDate, RetrieveImmediateBillingsFilter filter)
+    public List<DetailedImmediatePixBilling> RetrieveImmediateBillingInRange(Config config, string initialDate, string finalDate, RetrieveImmediateBillingsFilter filter)
     {
         InterSdk.LogInfo($"RetrieveImmediateBillingList {config.ClientId} {initialDate}-{finalDate}");
         int page = 0;
@@ -125,7 +125,7 @@ public class ImmediateBillingClient
     /// <returns> A {@link GeneratedImmediateBilling} object containing the details of the reviewed immediate billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the review process, such as network issues
     ///                      or API response errors. </exception>
-    public GeneratedImmediateBilling Review(Config config, PixBilling billing)
+    public GeneratedImmediateBilling ReviewImmediateBilling(Config config, PixBilling billing)
     {
         InterSdk.LogInfo($"ReviewImmediateBilling {config.ClientId} {billing.Txid}");
 

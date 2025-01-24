@@ -26,7 +26,7 @@ public class BankingPaymentClient
     ///                        that is to be canceled. </param>
     /// <exception cref="SdkException"> If an error occurs during the cancellation process,
     ///                        such as issues with the HTTP request or response. </exception>
-    public void Cancel(Config config, string transactionCode)
+    public void CancelPayment(Config config, string transactionCode)
     {
         InterSdk.LogInfo($"CancelPaymentScheduling banking {config.ClientId} {transactionCode}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT) + "/" + transactionCode;
@@ -51,7 +51,7 @@ public class BankingPaymentClient
     ///                       the response from the banking API regarding the batch inclusion. </returns>
     /// <exception cref="SdkException"> If an error occurs while including the payments, such as
     ///                        issues with the HTTP request or response. </exception>
-    public IncludeBatchPaymentResponse Include(Config config, string myIdentifier, List<BatchItem> payments)
+    public IncludeBatchPaymentResponse IncludePaymentInBatch(Config config, string myIdentifier, List<BatchItem> payments)
     {
         InterSdk.LogInfo($"IncludeBatchPayment banking {config.ClientId} {myIdentifier} {payments.Count}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT_BATCH);
@@ -92,7 +92,7 @@ public class BankingPaymentClient
     ///                 response from the banking API regarding the DARF payment inclusion. </returns>
     /// <exception cref="SdkException"> If an error occurs while including the DARF payment, such as
     ///                      issues with the HTTP request or response. </exception>
-    public IncludeDarfPaymentResponse Include(Config config, DarfPayment pagamento)
+    public IncludeDarfPaymentResponse IncludeDarfPayment(Config config, DarfPayment pagamento)
     {
         InterSdk.LogInfo($"IncludeDarfPayment banking {config.ClientId} {pagamento.RevenueCode}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT_DARF);
@@ -127,7 +127,7 @@ public class BankingPaymentClient
     ///                response from the banking API regarding the billet payment inclusion. </returns>
     /// <exception cref="SdkException"> If an error occurs while including the billet payment, such as
     ///                      issues with the HTTP request or response. </exception>
-    public IncludePaymentResponse Include(Config config, BilletPayment payment)
+    public IncludePaymentResponse IncludeBilletPayment(Config config, BilletPayment payment)
     {
         InterSdk.LogInfo($"IncludePayment {config.ClientId} {payment.Barcode}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT);
@@ -166,7 +166,7 @@ public class BankingPaymentClient
     ///                    the retrieved DARF payments. </returns>
     /// <exception cref="SdkException"> If an error occurs while retrieving the DARF payments,
     ///                      such as issues with the HTTP request or response. </exception>
-    public List<DarfPaymentResponse> Retrieve(Config config, string initialDate, string finalDate, DarfPaymentSearchFilter filtro)
+    public List<DarfPaymentResponse> RetrieveDarfPaymentList(Config config, string initialDate, string finalDate, DarfPaymentSearchFilter filtro)
     {
         InterSdk.LogInfo($"RetrieveDarfPayments banking {config.ClientId} {initialDate}-{finalDate}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT_DARF) 
@@ -201,7 +201,7 @@ public class BankingPaymentClient
     ///                payment batch along with the individual payments. </returns>
     /// <exception cref="SdkException"> If an error occurs while retrieving the payment batch, such as
     ///                      issues with the HTTP request or response. </exception>
-    public BatchProcessing Retrieve(Config config, string batchId)
+    public BatchProcessing RetrieveBatch(Config config, string batchId)
     {
         InterSdk.LogInfo($"RetrievePaymentBatch {config.ClientId} {batchId}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT_BATCH) + "/" + batchId;
@@ -256,7 +256,7 @@ public class BankingPaymentClient
     ///                    payments. </returns>
     /// <exception cref="SdkException"> If an error occurs while retrieving the payments, such as
     ///                      issues with the HTTP request or response. </exception>
-    public List<Payment> Retrieve(Config config, string initialDate, string finalDate, PaymentSearchFilter filtro)
+    public List<Payment> RetrieveBilletPaymentList(Config config, string initialDate, string finalDate, PaymentSearchFilter filtro)
     {
         InterSdk.LogInfo($"RetrievePayments banking {config.ClientId} {initialDate}-{finalDate}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_PAYMENT) 

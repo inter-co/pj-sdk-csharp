@@ -1,0 +1,12 @@
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/bin/Debug/net8.0/inter-sdk-library.deps.json
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/bin/Debug/net8.0/inter-sdk-library.dll
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/bin/Debug/net8.0/inter-sdk-library.pdb
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.csproj.AssemblyReference.cache
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.AssemblyInfoInputs.cache
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.AssemblyInfo.cs
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.csproj.CoreCompileInputs.cache
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.dll
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/refint/inter-sdk-library.dll
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/inter-sdk-library.pdb
+/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/Debug/net8.0/ref/inter-sdk-library.dll

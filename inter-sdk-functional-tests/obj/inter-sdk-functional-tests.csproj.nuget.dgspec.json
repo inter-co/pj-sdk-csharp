@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-functional-tests/inter-sdk-functional-tests.csproj": {}
+  },
+  "projects": {
+    "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-functional-tests/inter-sdk-functional-tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-functional-tests/inter-sdk-functional-tests.csproj",
+        "projectName": "inter-sdk-functional-tests",
+        "projectPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-functional-tests/inter-sdk-functional-tests.csproj",
+        "packagesPath": "/Users/bi008668/.nuget/packages/",
+        "outputPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-functional-tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bi008668/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/bi008668/.nuget/NuGet/nupkgs": {},
+          "/Users/bi008668/projetos/sdk/csharp/novo/PacotesLocais": {},
+          "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/bin/Release/inter-sdk-library.1.0.0.nupkg": {},
+          "/Users/bi008668/projetos/sdk/csharp/novo/nupkgs": {},
+          "/nupkgs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/inter-sdk-library.csproj": {
+                "projectPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/inter-sdk-library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/bi008668/.asdf/installs/dotnet/8.0.100/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/inter-sdk-library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/inter-sdk-library.csproj",
+        "projectName": "inter-sdk-library",
+        "projectPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/inter-sdk-library.csproj",
+        "packagesPath": "/Users/bi008668/.nuget/packages/",
+        "outputPath": "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bi008668/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/bi008668/.nuget/NuGet/nupkgs": {},
+          "/Users/bi008668/projetos/sdk/csharp/novo/PacotesLocais": {},
+          "/Users/bi008668/projetos/sdk/csharp/novo/inter-sdk-csharp/inter-sdk-library/bin/Release/inter-sdk-library.1.0.0.nupkg": {},
+          "/Users/bi008668/projetos/sdk/csharp/novo/nupkgs": {},
+          "/nupkgs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/bi008668/.asdf/installs/dotnet/8.0.100/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

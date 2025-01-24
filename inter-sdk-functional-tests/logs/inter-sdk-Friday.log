@@ -1,0 +1,9 @@
+1/24/2025 9:52:09 AM inter-sdk-csharp v1.0.2
+1/24/2025 9:53:10 AM inter-sdk-csharp v1.0.2
+1/24/2025 9:55:59 AM inter-sdk-csharp v1.0.2
+1/24/2025 9:58:34 AM inter-sdk-csharp v1.0.2
+1/24/2025 10:04:28 AM inter-sdk-csharp v1.0.2
+1/24/2025 10:04:31 AM RetrieveBalance 24ea41e8-e283-424b-9240-e3318cfc3ac1 
+1/24/2025 10:04:31 AM POST https://cdpj.partners.uatbi.com.br/oauth/v2/token
+1/24/2025 10:04:32 AM HTTPSTATUS OK
+1/24/2025 10:04:32 AM GET https://cdpj.partners.uatbi.com.br/banking/v2/saldo

@@ -74,7 +74,7 @@ public class FunctionalTestRunner
     {
         string clientId = FuncTestUtils.GetString("Integration clientId");
         string clientSecret = FuncTestUtils.GetString("Integration clientSecret");
-        string certificate = FuncTestUtils.GetString("Path of the file with the pfx certificate (ex: src/main/java/inter/certificates/production.pfx)");
+        string certificate = FuncTestUtils.GetString("Path of the file with the pfx certificate (ex: src/sdk/certificates/production.pfx)");
         string password = FuncTestUtils.GetString("Password of the file with the pfx certificate");
         string account = FuncTestUtils.GetString("Account");
 

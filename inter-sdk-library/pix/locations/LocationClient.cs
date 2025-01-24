@@ -19,7 +19,7 @@ public class LocationClient
     /// <returns> A {@link Location} object containing the details of the included location. </returns>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as network issues
     ///                      or API response errors. </exception>
-    public Location Include(Config config, string immediateBillingType)
+    public Location IncludeLocation(Config config, string immediateBillingType)
     {
         InterSdk.LogInfo($"IncludeLocation pix {config.ClientId} {immediateBillingType}");
         
@@ -48,7 +48,7 @@ public class LocationClient
     /// <returns> A {@link Location} object containing the details of the retrieved location. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public Location Retrieve(Config config, string id)
+    public Location RetrieveLocation(Config config, string id)
     {
         InterSdk.LogInfo($"RetrieveLocation {config.ClientId} id={id}");
         
@@ -78,7 +78,7 @@ public class LocationClient
     /// <returns> A {@link LocationPage} object containing the requested page of locations. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public LocationPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrieveLocationFilter filter)
+    public LocationPage RetrieveLocationPage(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrieveLocationFilter filter)
     {
         InterSdk.LogInfo($"RetrieveLocationsList {config.ClientId} {initialDate}-{finalDate} pagina={page}");
         
@@ -95,7 +95,7 @@ public class LocationClient
     /// <returns> A list of {@link Location} objects containing all retrieved locations. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<Location> Retrieve(Config config, string initialDate, string finalDate, RetrieveLocationFilter filter)
+    public List<Location> RetrieveLocationInRange(Config config, string initialDate, string finalDate, RetrieveLocationFilter filter)
     {
         InterSdk.LogInfo($"RetrieveLocationsList {config.ClientId} {initialDate}-{finalDate}");
         
@@ -121,7 +121,7 @@ public class LocationClient
     /// <returns> A {@link Location} object confirming the unlinking of the location. </returns>
     /// <exception cref="SdkException"> If there is an error during the unlinking process, such as network issues
     ///                      or API response errors. </exception>
-    public Location Unlink(Config config, string id)
+    public Location UnlinkLocation(Config config, string id)
     {
         InterSdk.LogInfo($"UnlinkLocation {config.ClientId} id={id}");
         
