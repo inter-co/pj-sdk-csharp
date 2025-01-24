@@ -13,7 +13,7 @@ public class PixWebhookSdk
     /// <param _name_="_key_"> The unique key of the webhook to be deleted. </param>
     /// <exception cref="SdkException"> If there is an error during the deletion process, such as network issues
     ///                      or API response errors. </exception>
-    public void Delete(Config config, string key)
+    public void DeleteWebhook(Config config, string key)
     {
         InterSdk.LogInfo($"DeleteWebhook pix {config.ClientId} {key}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_WEBHOOK) + "/" + key;
@@ -29,7 +29,7 @@ public class PixWebhookSdk
     /// <param _name_="_webhookUrl_"> The URL of the webhook to be included. </param>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as network issues
     ///                      or API response errors. </exception>
-    public void Include(Config config, string key, string webhookUrl)
+    public void IncludeWebhook(Config config, string key, string webhookUrl)
     {
         InterSdk.LogInfo($"IncludeWebhook pix {config.ClientId} {key} {webhookUrl}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_WEBHOOK) + "/" + key;
@@ -50,7 +50,7 @@ public class PixWebhookSdk
     /// <returns> A {@link PixCallbackPage} object containing the requested page of callback notifications. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public PixCallbackPage Retrieve(Config config, string initialDateHour, string finalDateHour, int page, int? pageSize, PixCallbackRetrieveFilter filter)
+    public PixCallbackPage RetrieveCallbackPage(Config config, string initialDateHour, string finalDateHour, int page, int? pageSize, PixCallbackRetrieveFilter filter)
     {
         InterSdk.LogInfo($"RetrieveCallbacks pix {config.ClientId} {initialDateHour}-{finalDateHour}");
         
@@ -67,7 +67,7 @@ public class PixWebhookSdk
     /// <returns> A list of {@link RetrieveCallbackResponse} objects containing all retrieved callbacks. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<RetrieveCallbackResponse> Retrieve(Config config, string initialDateHour, string finalDateHour, PixCallbackRetrieveFilter filter)
+    public List<RetrieveCallbackResponse> RetrieveCallbackInRange(Config config, string initialDateHour, string finalDateHour, PixCallbackRetrieveFilter filter)
     {
         InterSdk.LogInfo($"RetrieveCallbacks pix {config.ClientId} {initialDateHour}-{finalDateHour}");
         
@@ -93,7 +93,7 @@ public class PixWebhookSdk
     /// <returns> A {@link Webhook} object containing the details of the retrieved webhook. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public Webhook Retrieve(Config config, string key)
+    public Webhook RetrieveWebhook(Config config, string key)
     {
         InterSdk.LogInfo($"RetrieveWebhook pix {config.ClientId} {key}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_WEBHOOK) + "/" + key;

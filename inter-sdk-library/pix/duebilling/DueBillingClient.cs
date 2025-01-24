@@ -21,7 +21,7 @@ public class DueBillingClient
     /// <returns> A {@link GeneratedDueBilling} object containing the details of the generated billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as network issues
     ///                      or API response errors. </exception>
-    public GeneratedDueBilling Include(Config config, string txid, DueBilling billing)
+    public GeneratedDueBilling IncludeDueBilling(Config config, string txid, DueBilling billing)
     {
         InterSdk.LogInfo($"IncludeDueBilling {config.ClientId} {txid}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS) + "/" + txid;
@@ -47,7 +47,7 @@ public class DueBillingClient
     /// <returns> A {@link DetailedDuePixBilling} object containing the details of the scheduled billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DetailedDuePixBilling Retrieve(Config config, string txid)
+    public DetailedDuePixBilling RetrieveDueBilling(Config config, string txid)
     {
         InterSdk.LogInfo($"RetrieveDueBilling {config.ClientId} txId={txid}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS) + "/" + txid;
@@ -76,7 +76,7 @@ public class DueBillingClient
     /// <returns> A {@link DueBillingPage} object containing the requested page of due billings. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DueBillingPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrieveDueBillingFilter filter)
+    public DueBillingPage RetrieveDueBillingPage(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrieveDueBillingFilter filter)
     {
         InterSdk.LogInfo($"RetrieveDueBillingList {config.ClientId} {initialDate}-{finalDate} page={page}");
         return GetPage(config, initialDate, finalDate, page, pageSize, filter);
@@ -92,7 +92,7 @@ public class DueBillingClient
     /// <returns> A list of {@link DetailedDuePixBilling} objects containing all retrieved billings. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<DetailedDuePixBilling> Retrieve(Config config, string initialDate, string finalDate, RetrieveDueBillingFilter filter)
+    public List<DetailedDuePixBilling> RetrieveDueBillingInRange(Config config, string initialDate, string finalDate, RetrieveDueBillingFilter filter)
     {
         InterSdk.LogInfo($"RetrieveDueBillingList {config.ClientId} {initialDate}-{finalDate}");
         int page = 0;
@@ -118,7 +118,7 @@ public class DueBillingClient
     /// <returns> A {@link GeneratedDueBilling} object containing the details of the reviewed billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the review process, such as network issues
     ///                      or API response errors. </exception>
-    public GeneratedDueBilling Review(Config config, string txid, DueBilling billing)
+    public GeneratedDueBilling ReviewDueBilling(Config config, string txid, DueBilling billing)
     {
         InterSdk.LogInfo($"ReviewDueBilling {config.ClientId} {txid}");
 

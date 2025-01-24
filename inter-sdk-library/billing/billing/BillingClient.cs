@@ -21,7 +21,7 @@ public class BillingClient
     /// <param _name_="_cancellationReason_"> The reason for canceling the billing request. </param>
     /// <exception cref="SdkException"> If there is an error during the cancellation process, such as
     ///                      network issues or API response errors. </exception>
-    public void Cancel(Config config, string requestCode, string cancellationReason)
+    public void CancelBilling(Config config, string requestCode, string cancellationReason)
     {
         InterSdk.LogInfo($"CancelBilling {config.ClientId} {requestCode} {cancellationReason}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING) + "/" + requestCode + "/cancelar";
@@ -47,7 +47,7 @@ public class BillingClient
     /// <returns> A {@link BillingIssueResponse} object containing the response details from the billing issue process. </returns>
     /// <exception cref="SdkException"> If there is an error during the billing issuance process, such as network issues
     ///                      or API response errors. </exception>
-    public BillingIssueResponse Issue(Config config, BillingIssueRequest billingIssueRequest)
+    public BillingIssueResponse IssueBilling(Config config, BillingIssueRequest billingIssueRequest)
     {
         InterSdk.LogInfo($"IssueBilling {config.ClientId} {billingIssueRequest.YourNumber}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING);
@@ -73,7 +73,7 @@ public class BillingClient
     /// <returns> A {@link RetrievedBilling} object containing the details of the requested billing. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as
     ///                      network issues or API response errors. </exception>
-    public RetrievedBilling Retrieve(Config config, string requestCode)
+    public RetrievedBilling RetrieveBilling(Config config, string requestCode)
     {
         InterSdk.LogInfo($"RetrieveIssue {config.ClientId} requestCode={requestCode}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING) + "/" + requestCode;
@@ -103,7 +103,7 @@ public class BillingClient
     /// <returns> A {@link BillingPage} object containing the requested page of billing records. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public BillingPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize, BillingRetrievalFilter filter, Sorting sort)
+    public BillingPage RetrieveBillingPage(Config config, string initialDate, string finalDate, int page, int? pageSize, BillingRetrievalFilter filter, Sorting sort)
     {
         InterSdk.LogInfo($"RetrieveBillingCollection {config.ClientId} {initialDate}-{finalDate}");
         return GetPage(config, initialDate, finalDate, page, pageSize, filter, sort);
@@ -121,7 +121,7 @@ public class BillingClient
     /// within the specified date range. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<RetrievedBillingCollectionUnit> Retrieve(Config config, string initialDate, string finalDate, BillingRetrievalFilter filter, Sorting sort)
+    public List<RetrievedBillingCollectionUnit> RetrieveBillingInRange(Config config, string initialDate, string finalDate, BillingRetrievalFilter filter, Sorting sort)
     {
         InterSdk.LogInfo($"RetrieveBillingCollection {config.ClientId} {initialDate}-{finalDate}");
         int page = 0;
@@ -146,7 +146,7 @@ public class BillingClient
     /// <param _name_="_file_"> The file path where the PDF document will be saved. </param>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public void Retrieve(Config config, string requestCode, string file)
+    public void RetrieveBillingInPdf(Config config, string requestCode, string file)
     {
         InterSdk.LogInfo($"RetrieveBillingPdf {config.ClientId} requestCode={requestCode}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING) + "/" + requestCode + "/pdf";
@@ -165,7 +165,7 @@ public class BillingClient
     /// <returns> A {@link Summary} object containing the billing summary details. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public Summary Retrieve(Config config, string initialDate, string finalDate, BillingRetrievalFilter filter)
+    public Summary RetrieveBillingSummary(Config config, string initialDate, string finalDate, BillingRetrievalFilter filter)
     {
         InterSdk.LogInfo($"RetrieveBillingSummary {config.ClientId} {initialDate}-{finalDate}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_BILLING_SUMMARY)

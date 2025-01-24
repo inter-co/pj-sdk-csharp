@@ -28,7 +28,7 @@ public class BankingSdk {
             bankStatementClient = new BankStatementClient();
         }
 
-        return bankStatementClient.Retrieve(config, initialDate, finalDate);
+        return bankStatementClient.RetrieveStatement(config, initialDate, finalDate);
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ public class BankingSdk {
             bankStatementClient = new BankStatementClient();
         }
 
-        bankStatementClient.Retrieve(config, initialDate, finalDate, file);
+        bankStatementClient.RetrieveStatementInPdf(config, initialDate, finalDate, file);
     }
 
     /// <summary>
@@ -58,14 +58,14 @@ public class BankingSdk {
     /// <returns> List of enriched transactions. </returns>
     /// <see href="https://developers.inter.co/references/banking#tag/Extrato/operation/ExtratoComplete">Query Enriched Statement</see>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public List<EnrichedTransaction> RetrieveEnrichedStatement(string initialDate, string finalDate, FilterRetrieveEnrichedStatement filter)
+    public List<EnrichedTransaction> RetrieveEnrichedStatementInRange(string initialDate, string finalDate, FilterRetrieveEnrichedStatement filter)
     {
         if (bankStatementClient == null)
         {
             bankStatementClient = new BankStatementClient();
         }
 
-        return bankStatementClient.Retrieve(config, initialDate, finalDate, filter);
+        return bankStatementClient.RetrieveStatementInRange(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -78,14 +78,14 @@ public class BankingSdk {
     /// <returns> List of enriched transactions. </returns>
     /// <see href="https://developers.inter.co/references/banking#tag/Extrato/operation/ExtratoComplete">Query Enriched Statement</see>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public EnrichedBankStatementPage RetrieveEnrichedStatement(string initialDate, string finalDate, FilterRetrieveEnrichedStatement filter, int page)
+    public EnrichedBankStatementPage RetrieveEnrichedStatementPage(string initialDate, string finalDate, FilterRetrieveEnrichedStatement filter, int page)
     {
         if (bankStatementClient == null)
         {
             bankStatementClient = new BankStatementClient();
         }
 
-        return bankStatementClient.Retrieve(config, initialDate, finalDate, page, null, filter);
+        return bankStatementClient.RetrieveEnrichedStatementPage(config, initialDate, finalDate, page, null, filter);
     }
 
     /// <summary>
@@ -106,7 +106,7 @@ public class BankingSdk {
             bankStatementClient = new BankStatementClient();
         }
 
-        return bankStatementClient.Retrieve(config, initialDate, finalDate, page, pageSize, filter);
+        return bankStatementClient.RetrieveEnrichedStatementPage(config, initialDate, finalDate, page, pageSize, filter);
     }
 
     /// <summary>
@@ -123,7 +123,7 @@ public class BankingSdk {
             balanceClient = new BalanceClient();
         }
 
-        return balanceClient.Retrieve(config, balanceDate);
+        return balanceClient.RetrieveBalance(config, balanceDate);
     }
 
     /// <summary>
@@ -140,7 +140,7 @@ public class BankingSdk {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        return bankingPaymentClient.Include(config, payment);
+        return bankingPaymentClient.IncludeBilletPayment(config, payment);
     }
 
     /// <summary>
@@ -152,14 +152,14 @@ public class BankingSdk {
     /// <returns> List of payments. </returns>
     /// <see href="https://developers.inter.co/references/banking#tag/Pagamento/operation/buscarInformacoesPagamentos">Retrieve Payments</see>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public List<Payment> RetrievePayment(string initialDate, string finalDate, PaymentSearchFilter filter)
+    public List<Payment> RetrievePaymentsInRange(string initialDate, string finalDate, PaymentSearchFilter filter)
     {
         if (bankingPaymentClient == null)
         {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        return bankingPaymentClient.Retrieve(config, initialDate, finalDate, filter);
+        return bankingPaymentClient.RetrieveBilletPaymentList(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -176,7 +176,7 @@ public class BankingSdk {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        return bankingPaymentClient.Include(config, payment);
+        return bankingPaymentClient.IncludeDarfPayment(config, payment);
     }
 
     /// <summary>
@@ -188,14 +188,14 @@ public class BankingSdk {
     /// <returns> List of payments. </returns>
     /// <see href="https://developers.inter.co/references/banking#tag/Pagamento/operation/buscarInformacoesPagamentoDarf">Retrieve DARF Payments</see>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public List<DarfPaymentResponse> RetrieveDarfPayments(string initialDate, string finalDate, DarfPaymentSearchFilter filter)
+    public List<DarfPaymentResponse> RetrieveDarfPaymentsInRange(string initialDate, string finalDate, DarfPaymentSearchFilter filter)
     {
         if (bankingPaymentClient == null)
         {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        return bankingPaymentClient.Retrieve(config, initialDate, finalDate, filter);
+        return bankingPaymentClient.RetrieveDarfPaymentList(config, initialDate, finalDate, filter);
     }
 
     /// <summary>
@@ -213,7 +213,7 @@ public class BankingSdk {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        return bankingPaymentClient.Include(config, myIdentifier, payments);
+        return bankingPaymentClient.IncludePaymentInBatch(config, myIdentifier, payments);
     }
 
     /// <summary>
@@ -230,7 +230,7 @@ public class BankingSdk {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        return bankingPaymentClient.Retrieve(config, batchId);
+        return bankingPaymentClient.RetrieveBatch(config, batchId);
     }
 
     /// <summary>
@@ -247,7 +247,7 @@ public class BankingSdk {
             bankingPixClient = new BankingPixClient();
         }
 
-        return bankingPixClient.Include(config, pix);
+        return bankingPixClient.IncludePixPayment(config, pix);
     }
 
     /// <summary>
@@ -264,7 +264,7 @@ public class BankingSdk {
             bankingPixClient = new BankingPixClient();
         }
 
-        return bankingPixClient.Retrieve(config, requestCode);
+        return bankingPixClient.RetrievePixPayment(config, requestCode);
     }
 
     /// <summary>
@@ -281,7 +281,7 @@ public class BankingSdk {
             bankingWebhookClient = new BankingWebhookClient();
         }
 
-        bankingWebhookClient.Include(config, webhookType, webhookUrl);
+        bankingWebhookClient.IncludeWebhook(config, webhookType, webhookUrl);
     }
 
     /// <summary>
@@ -298,7 +298,7 @@ public class BankingSdk {
             bankingWebhookClient = new BankingWebhookClient();
         }
 
-        return bankingWebhookClient.Retrieve(config, webhookType);
+        return bankingWebhookClient.RetrieveWebhook(config, webhookType);
     }
 
     /// <summary>
@@ -314,7 +314,7 @@ public class BankingSdk {
             bankingWebhookClient = new BankingWebhookClient();
         }
 
-        bankingWebhookClient.Delete(config, webhookType);
+        bankingWebhookClient.DeleteWebhook(config, webhookType);
     }
 
     /// <summary>
@@ -327,14 +327,14 @@ public class BankingSdk {
     /// <returns> List of callbacks. </returns>
     /// <see href="https://developers.inter.co/references/banking#tag/Webhook/operation/callbacksFilter">Retrieve Collection of billets</see>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public List<RetrieveCallbackResponse> RetrieveCallback(string webhookType, string initialDateHour, string finalDateHour, CallbackRetrieveFilter filter)
+    public List<RetrieveCallbackResponse> RetrieveCallbackInRange(string webhookType, string initialDateHour, string finalDateHour, CallbackRetrieveFilter filter)
     {
         if (bankingWebhookClient == null)
         {
             bankingWebhookClient = new BankingWebhookClient();
         }
 
-        return bankingWebhookClient.Retrieve(config, webhookType, initialDateHour, finalDateHour, filter);
+        return bankingWebhookClient.RetrieveCallbacksInRange(config, webhookType, initialDateHour, finalDateHour, filter);
     }
 
     /// <summary>
@@ -349,14 +349,14 @@ public class BankingSdk {
     /// <returns> Page with a list of billets. </returns>
     /// <see href="https://developers.inter.co/references/banking#tag/Webhook/operation/callbacksFilter">Retrieve Collection of billets</see>
     /// <exception cref="SdkException"> If there is an error during the retrieval process. </exception>
-    public CallbackPage RetrieveCallback(string webhookType, string initialDateHour, string finalDateHour, CallbackRetrieveFilter filter, int page, int pageSize)
+    public CallbackPage RetrieveCallbacksPage(string webhookType, string initialDateHour, string finalDateHour, CallbackRetrieveFilter filter, int page, int pageSize)
     {
         if (bankingWebhookClient == null)
         {
             bankingWebhookClient = new BankingWebhookClient();
         }
 
-        return bankingWebhookClient.Retrieve(config, webhookType, initialDateHour, finalDateHour, page, null, filter);
+        return bankingWebhookClient.RetrieveCallbackPage(config, webhookType, initialDateHour, finalDateHour, page, null, filter);
     }
 
     /// <summary>
@@ -371,6 +371,6 @@ public class BankingSdk {
             bankingPaymentClient = new BankingPaymentClient();
         }
 
-        bankingPaymentClient.Cancel(config, transactionCode);
+        bankingPaymentClient.CancelPayment(config, transactionCode);
     }
 }

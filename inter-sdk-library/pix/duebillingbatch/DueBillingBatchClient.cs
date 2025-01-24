@@ -21,7 +21,7 @@ public class DueBillingBatchClient
     ///                of the due billing batch request to be included. </param>
     /// <exception cref="SdkException"> If there is an error during the inclusion process, such as network issues
     ///                      or API response errors. </exception>
-    public void Include(Config config, string id, IncludeDueBillingBatchRequest request)
+    public void IncludeDueBillingBatch(Config config, string id, IncludeDueBillingBatchRequest request)
     {
         InterSdk.LogInfo($"IncludeDueBillingBatch {config.ClientId} {request}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS_BATCH) + "/" + id;
@@ -46,7 +46,7 @@ public class DueBillingBatchClient
     /// <returns> A {@link DueBillingBatch} object containing the details of the retrieved due billing batch. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DueBillingBatch Retrieve(Config config, string id)
+    public DueBillingBatch RetrieveDueBillingBatch(Config config, string id)
     {
         InterSdk.LogInfo($"RetrieveDueBillingBatch {config.ClientId} id={id}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS_BATCH) + "/" + id;
@@ -74,7 +74,7 @@ public class DueBillingBatchClient
     /// <returns> A {@link DueBillingBatchPage} object containing the requested page of due billing batches. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DueBillingBatchPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize)
+    public DueBillingBatchPage RetrieveDueBillingBatchesPage(Config config, string initialDate, string finalDate, int page, int? pageSize)
     {
         InterSdk.LogInfo($"RetrieveDueBillingBatchList {config.ClientId} {initialDate}-{finalDate} page={page}");
         return GetPage(config, initialDate, finalDate, page, pageSize);
@@ -89,7 +89,7 @@ public class DueBillingBatchClient
     /// <returns> A list of {@link DueBillingBatch} objects containing all retrieved billing batches. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<DueBillingBatch> Retrieve(Config config, string initialDate, string finalDate)
+    public List<DueBillingBatch> RetrieveDueBillingBatchesInRange(Config config, string initialDate, string finalDate)
     {
         InterSdk.LogInfo($"RetrieveDueBillingBatchList {config.ClientId} {initialDate}-{finalDate}");
         int page = 0;
@@ -114,7 +114,7 @@ public class DueBillingBatchClient
     /// <param _name_="_request_"> The {@link IncludeDueBillingBatchRequest} object containing the details to update the review. </param>
     /// <exception cref="SdkException"> If there is an error during the review process, such as network issues
     ///                      or API response errors. </exception>
-    public void Review(Config config, string id, IncludeDueBillingBatchRequest request)
+    public void ReviewDueBillingBatch(Config config, string id, IncludeDueBillingBatchRequest request)
     {
         InterSdk.LogInfo($"IncludeDueBillingBatch {config.ClientId} {request}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS_BATCH) + "/" + id;
@@ -139,7 +139,7 @@ public class DueBillingBatchClient
     /// <returns> A {@link DueBillingBatchSummary} object containing the summary details of the retrieved due billing batch. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DueBillingBatchSummary RetrieveSummary(Config config, string id)
+    public DueBillingBatchSummary RetrieveDueBillingBatchSummary(Config config, string id)
     {
         InterSdk.LogInfo($"RetrieveDueBillingBatch {config.ClientId} id={id}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS_BATCH) + "/" + id + "/sumario";
@@ -169,7 +169,7 @@ public class DueBillingBatchClient
     /// <exception cref="SdkException"> If an error occurs while making the HTTP request or processing the response.
     ///                      This includes issues related to network access, invalid responses,
     ///                      and JSON mapping errors. </exception>
-    public DueBillingBatch RetrieveBySituation(Config config, string id, string situation)
+    public DueBillingBatch RetrieveDueBillingBatchBySituation(Config config, string id, string situation)
     {
         InterSdk.LogInfo($"RetrieveDueBillingBatchSituation {config.ClientId} id={id}");
         string url = UrlUtils.BuildUrl(config, Constants.URL_PIX_SCHEDULED_BILLINGS_BATCH) + "/" + id + "/situacao/" + situation;

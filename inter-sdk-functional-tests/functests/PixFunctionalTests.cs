@@ -83,7 +83,7 @@ public class PixFunctionalTests
         string finalDate = FuncTestUtils.GetString("finalDate(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         RetrieveDueBillingFilter retrieveDueBillingFilter = new RetrieveDueBillingFilter(); // Inicializador de objeto
 
-        List<DetailedDuePixBilling> duePixBillingList = pixSdk.RetrieveBillingCollection(initialDate, finalDate, retrieveDueBillingFilter);
+        List<DetailedDuePixBilling> duePixBillingList = pixSdk.RetrieveBillingCollectionInRange(initialDate, finalDate, retrieveDueBillingFilter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(duePixBillingList, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -97,7 +97,7 @@ public class PixFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        DueBillingPage dueBillingPage = pixSdk.RetrieveBillingCollection(initialDate, finalDate, page, pageSize, retrieveDueBillingFilter);
+        DueBillingPage dueBillingPage = pixSdk.RetrieveDueBillingCollectionPage(initialDate, finalDate, page, pageSize, retrieveDueBillingFilter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(dueBillingPage, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -231,7 +231,7 @@ public class PixFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        DueBillingBatchPage dueBillingBatchPage = pixSdk.RetrieveDueBillingBatchCollection(initialDate, finalDate, page, pageSize);
+        DueBillingBatchPage dueBillingBatchPage = pixSdk.RetrieveDueBillingBatchCollectionPage(initialDate, finalDate, page, pageSize);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(dueBillingBatchPage, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -242,7 +242,7 @@ public class PixFunctionalTests
         string initialDate = FuncTestUtils.GetString("initialDate(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         string finalDate = FuncTestUtils.GetString("finalDate(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
 
-        List<DueBillingBatch> dueBillingBatchCollection = pixSdk.RetrieveDueBillingBatchCollection(initialDate, finalDate);
+        List<DueBillingBatch> dueBillingBatchCollection = pixSdk.RetrieveDueBillingBatchCollectionInRange(initialDate, finalDate);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(dueBillingBatchCollection, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -445,7 +445,7 @@ public class PixFunctionalTests
         string finalDate = FuncTestUtils.GetString("finalDate(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         RetrieveImmediateBillingsFilter filter = new RetrieveImmediateBillingsFilter(); // Inicializador de objeto
 
-        List<DetailedImmediatePixBilling> detailedImmediatePixBilling = pixSdk.RetrieveImmediateBillingList(initialDate, finalDate, filter);
+        List<DetailedImmediatePixBilling> detailedImmediatePixBilling = pixSdk.RetrieveImmediateBillingCollectionInRange(initialDate, finalDate, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(detailedImmediatePixBilling, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -459,7 +459,7 @@ public class PixFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        PixBillingPage detailedImmediatePixBilling = pixSdk.RetrieveImmediateBillingList(initialDate, finalDate, page, pageSize, filter);
+        PixBillingPage detailedImmediatePixBilling = pixSdk.RetrieveImmediateBillingCollectionPage(initialDate, finalDate, page, pageSize, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(detailedImmediatePixBilling, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -533,7 +533,7 @@ public class PixFunctionalTests
         string finalDate = FuncTestUtils.GetString("finalDate(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         RetrieveLocationFilter filter = new RetrieveLocationFilter();
 
-        List<Location> location = pixSdk.RetrieveLocationsList(initialDate, finalDate, filter);
+        List<Location> location = pixSdk.RetrieveLocationsListInRange(initialDate, finalDate, filter);
 
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(location, Newtonsoft.Json.Formatting.Indented));
     }
@@ -548,7 +548,7 @@ public class PixFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        LocationPage locationPage = pixSdk.RetrieveLocationsList(initialDate, finalDate, page, pageSize, filter);
+        LocationPage locationPage = pixSdk.RetrieveLocationsListPage(initialDate, finalDate, page, pageSize, filter);
 
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(locationPage, Newtonsoft.Json.Formatting.Indented));
     }
@@ -606,7 +606,7 @@ public class PixFunctionalTests
         string finalDate = FuncTestUtils.GetString("finalDate(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         RetrievedPixFilter filter = new RetrievedPixFilter();
 
-        List<Pix> detailedDevolution = pixSdk.RetrievePixList(initialDate, finalDate, filter);
+        List<Pix> detailedDevolution = pixSdk.RetrievePixListInRange(initialDate, finalDate, filter);
 
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(detailedDevolution, Newtonsoft.Json.Formatting.Indented));
     }
@@ -621,7 +621,7 @@ public class PixFunctionalTests
         int page = 0;
         int pageList = 10;
 
-        PixPage pix = pixSdk.RetrievePixList(initialDate, finalDate, page, pageList, filter);
+        PixPage pix = pixSdk.RetrievePixListPage(initialDate, finalDate, page, pageList, filter);
 
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(pix, Newtonsoft.Json.Formatting.Indented));
     }
@@ -645,7 +645,7 @@ public class PixFunctionalTests
         string finalDateHour = FuncTestUtils.GetString("finalDateHour(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         PixCallbackRetrieveFilter filter = new PixCallbackRetrieveFilter();
 
-        List<RetrieveCallbackResponse> callbacks = pixSdk.RetrieveCallbacks(initialDateHour, finalDateHour, filter);
+        List<RetrieveCallbackResponse> callbacks = pixSdk.RetrieveCallbacksInRange(initialDateHour, finalDateHour, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(callbacks, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -659,7 +659,7 @@ public class PixFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        PixCallbackPage callbacks = pixSdk.RetrieveCallbacks(initialDateHour, finalDateHour, page, pageSize, filter);
+        PixCallbackPage callbacks = pixSdk.RetrieveCallbacksPage(initialDateHour, finalDateHour, page, pageSize, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(callbacks, Newtonsoft.Json.Formatting.Indented));
     }
 

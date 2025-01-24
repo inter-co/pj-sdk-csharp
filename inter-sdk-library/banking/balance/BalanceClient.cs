@@ -13,7 +13,7 @@ using System.Text.Json;
 public class BalanceClient
 {
 
-    public Balance Retrieve(Config config, string balanceDate) {
+    public Balance RetrieveBalance(Config config, string balanceDate) {
         InterSdk.LogInfo("RetrieveBalance {0} {1}", config.ClientId, balanceDate);
         string url = UrlUtils.BuildUrl(config, Constants.URL_BANKING_BALANCE);
         if (balanceDate != null ) {

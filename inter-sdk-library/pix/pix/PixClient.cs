@@ -21,7 +21,7 @@ public class PixClient
     /// <returns> A {@link DetailedDevolution} object containing details about the requested devolution. </returns>
     /// <exception cref="SdkException"> If there is an error during the request process, such as network issues
     ///                      or API response errors. </exception>
-    public DetailedDevolution Request(Config config, string e2eId, string id, DevolutionRequestBody devolutionRequestBody)
+    public DetailedDevolution RequestDevolution(Config config, string e2eId, string id, DevolutionRequestBody devolutionRequestBody)
     {
         InterSdk.LogInfo($"RequestDevolution {config.ClientId} e2eId={e2eId} id={id}");
         
@@ -49,7 +49,7 @@ public class PixClient
     /// <returns> A {@link DetailedDevolution} object containing the details of the retrieved devolution. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public DetailedDevolution Retrieve(Config config, string e2eId, string id)
+    public DetailedDevolution RetrieveDevolution(Config config, string e2eId, string id)
     {
         InterSdk.LogInfo($"RetrieveDevolution {config.ClientId} e2eId={e2eId} id={id}");
         
@@ -75,7 +75,7 @@ public class PixClient
     /// <returns> A {@link Pix} object containing the details of the retrieved Pix transaction. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public Pix Retrieve(Config config, string e2eId)
+    public Pix RetrievePix(Config config, string e2eId)
     {
         InterSdk.LogInfo($"RetrievePix {config.ClientId} e2eId={e2eId}");
         
@@ -105,7 +105,7 @@ public class PixClient
     /// <returns> A {@link PixPage} object containing the requested page of Pix transactions. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public PixPage Retrieve(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrievedPixFilter filter)
+    public PixPage RetrievePixPage(Config config, string initialDate, string finalDate, int page, int? pageSize, RetrievedPixFilter filter)
     {
         InterSdk.LogInfo($"RetrievePixList {config.ClientId} {initialDate}-{finalDate} page={page}");
         
@@ -122,7 +122,7 @@ public class PixClient
     /// <returns> A list of {@link Pix} objects containing all retrieved Pix transactions. </returns>
     /// <exception cref="SdkException"> If there is an error during the retrieval process, such as network issues
     ///                      or API response errors. </exception>
-    public List<Pix> Retrieve(Config config, string initialDate, string finalDate, RetrievedPixFilter filter)
+    public List<Pix> RetrievePixInRange(Config config, string initialDate, string finalDate, RetrievedPixFilter filter)
     {
         InterSdk.LogInfo($"RetrievePixList {config.ClientId} {initialDate}-{finalDate}");
         

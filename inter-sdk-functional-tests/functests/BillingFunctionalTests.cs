@@ -84,7 +84,7 @@ public class BillingFunctionalTests
         BillingRetrievalFilter billingRetrievalFilter = new BillingRetrievalFilter();
         Sorting sorting = new Sorting();
 
-        List<RetrievedBillingCollectionUnit> retrieveBilling = billingSdk.RetrieveBillingCollection(initialDate, finalDate, billingRetrievalFilter, sorting);
+        List<RetrievedBillingCollectionUnit> retrieveBilling = billingSdk.RetrieveBillingCollectionInRange(initialDate, finalDate, billingRetrievalFilter, sorting);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(retrieveBilling, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -99,7 +99,7 @@ public class BillingFunctionalTests
         int pageSize = 10;
         Sorting sorting = new Sorting();
 
-        BillingPage retrieveBilling = billingSdk.RetrieveBillingCollection(initialDate, finalDate, page, pageSize, billingRetrievalFilter, sorting);
+        BillingPage retrieveBilling = billingSdk.RetrieveBillingCollectionPage(initialDate, finalDate, page, pageSize, billingRetrievalFilter, sorting);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(retrieveBilling, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -134,7 +134,7 @@ public class BillingFunctionalTests
         string finalDateHour = FuncTestUtils.GetString("finalDateHour(YYYY-MM-DDTHH:MM:SSZ ex:2022-04-01T10:30:00Z)");
         BillingRetrieveCallbacksFilter filter = new BillingRetrieveCallbacksFilter();
 
-        List<BillingRetrieveCallbackResponse> callbacks = billingSdk.RetrieveCallbacks(initialDateHour, finalDateHour, filter);
+        List<BillingRetrieveCallbackResponse> callbacks = billingSdk.RetrieveCallbacksInRange(initialDateHour, finalDateHour, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(callbacks, Newtonsoft.Json.Formatting.Indented));
     }
 
@@ -148,7 +148,7 @@ public class BillingFunctionalTests
         int page = 0;
         int pageSize = 10;
 
-        BillingCallbackPage callbacks = billingSdk.RetrieveCallbacks(initialDateHour, finalDateHour, page, pageSize, filter);
+        BillingCallbackPage callbacks = billingSdk.RetrieveCallbacksPage(initialDateHour, finalDateHour, page, pageSize, filter);
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(callbacks, Newtonsoft.Json.Formatting.Indented));
     }
 
