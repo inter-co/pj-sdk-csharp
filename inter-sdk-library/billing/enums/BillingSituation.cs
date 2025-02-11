@@ -13,4 +13,5 @@ public class BillingSituation
     public static string EXPIRADO = "EXPIRADO"; // Expired
     public static string FALHA_EMISSAO = "FALHA_EMISSAO"; // Emission failure
     public static string EM_PROCESSAMENTO = "EM_PROCESSAMENTO"; // In processing
+    public static string PROTESTO = "PROTESTO"; // Protest
 }
